@@ -58,7 +58,11 @@ def cicd(user_or_org, title, ref, test_cmd):
         install_cmds, conda_env = install_dependencies()
         if isinstance(test_cmd, str):
             test_cmd = test_cmd.split("|")
-        test_cmds = run_tests(test_cmd, conda_env=conda_env)
+
+        try:
+            test_cmds = run_tests(test_cmd, conda_env=conda_env)
+        except bash.CommandFailed as cf:
+            test_cmds = cf.prior_cmds + [cf.cmd]
 
         return clone_cmds, install_cmds, test_cmds
 
