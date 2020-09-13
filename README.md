@@ -14,4 +14,4 @@ I wanted to build a tool for people I trust to run their tests on infrastructure
 
 After doing some research into various types of CI/CD systems like self-hosted GitHub Actions Runners or Jenkins, I realized it was going to take a lot of effort to set them up securely. Further, it seemed like it would be just about impossible to do so securely on a public system.
 
-So, I decided to write my own simple version instead of going through the hastle of deploying a system that didn't quite do what I wanted it to anyways.
+So, I decided to write my own simple version to deploy on private infrastructure instead of going through the hastle of deploying a system that didn't quite do what I wanted it to anyways.
